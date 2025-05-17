@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERWIN MACHITAR - PROFILE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="top-container">
+      <div class="title">
+        <h1 id="name">I'm Erwin</h1>
+        <h2 id="job-title">a Web Developer</h2>
+      </div>
+      <div class="second">
+        <img
+          class="main-image"
+          src="./images/luffy-g5.png"
+          alt="luffy laughing in gear 5"
+        />
+      </div>
+    </div>
+    <div class="mid-container">
+      <div class="first">
+        <h1>Konnichiwa!</h1>
+        <p>
+          I’m a Web Developer and QA Tester with a focus on building reliable,
+          user-friendly websites and ensuring software quality.
+        </p>
+      </div>
+    </div>
+    <div class="bottom-container">
+      <div class="first">
+        <h1>My Skills</h1>
+        <ul>
+          <li>
+            <strong>Languages:</strong> C#, JavaScript, Java, Python, SQL, HTML,
+            CSS
+          </li>
+          <li>
+            <strong>Testing Tools:</strong> JIRA, TestRail, Selenium WebDriver
+            (basic), Playwright (basic), Postman (basic)
+          </li>
+          <li>
+            <strong>Testing Methods:</strong> Black Box, Exploratory, Ad-hoc,
+            Usability, Unit, System, Sanity, Smoke, Regression, Acceptance,
+            Performance, Load, Stress, Compatibility Testing
+          </li>
+          <li>
+            <strong>Software Development:</strong> Experienced in developing PC
+            and Android games using Unity.
+          </li>
+          <li><strong>Design Tools:</strong> Adobe Photoshop</li>
+          <li>
+            <strong>Other Skills:</strong> Bug tracking, troubleshooting, print
+            and digital media design
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const phrases = ["a Web Developer", "a QA Tester"];
+      let index = 0;
+      const h2 = document.getElementById("job-title");
+
+      function cycleText() {
+        // Start fade out
+        h2.style.opacity = 0;
+
+        setTimeout(() => {
+          // Change text once faded out
+          index = (index + 1) % phrases.length;
+          h2.textContent = phrases[index];
+
+          // Fade back in
+          h2.style.opacity = 1;
+        }, 1000); // match fade-out duration
+      }
+
+      // Start cycling every 3 seconds
+      setInterval(cycleText, 3000);
+
+      // Image animation
+      const image = document.querySelector(".main-image");
+
+      document.addEventListener("mousemove", (e) => {
+        const { innerWidth, innerHeight } = window;
+        const offsetX = (e.clientX - innerWidth / 2) / 200; // Adjust for sensitivity
+        const offsetY = (e.clientY - innerHeight / 2) / 200;
+
+        image.style.transform = `scale(1.2) translate(${offsetX}px, ${offsetY}px)`;
+      });
+    </script>
+  </body>
+</html>

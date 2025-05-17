@@ -1,0 +1,246 @@
+/* ========== Base Styles ========== */
+body {
+  background-color: #1a1a1a;
+  margin: 0;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  letter-spacing: 1px;
+}
+
+/* ========== Top Container ========== */
+.top-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.title {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.top-container .second {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-image {
+  height: 250px;
+  transform: scale(1.2);
+}
+
+/* ========== Mid Container ========== */
+.mid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #d6d6d6;
+  color: #000;
+}
+
+.mid-container .first {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ========== Bottom Container ========== */
+.bottom-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.bottom-container .first {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bottom-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bottom-container li {
+  border-left: 5px solid rgba(207, 15, 69, 0.2);
+  margin-bottom: 40px;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.bottom-container li strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff0b55;
+  font-weight: 600;
+}
+
+/* ========== Typography ========== */
+#job-title {
+  font-size: 4em;
+  font-family: "Roboto", sans-serif;
+  color: #ff0b55;
+  transition: opacity 1s ease-in-out;
+}
+
+#name {
+  font-size: 2em;
+}
+
+/* ========== Responsive Styles ========== */
+
+/* Large desktops (1200px and up) */
+@media screen and (min-width: 1200px) {
+  .top-container {
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 70vh;
+  }
+
+  .top-container .second {
+    align-self: end;
+  }
+
+  .mid-container {
+    height: 30vh;
+  }
+}
+
+/* Desktops (1025px – 1199px) */
+@media screen and (max-width: 1199px) {
+  .top-container {
+    grid-template-columns: 1fr 4fr 1fr;
+    height: 70vh;
+  }
+
+  .top-container .second {
+    align-self: end;
+  }
+
+  .bottom-container {
+    height: 100vh;
+  }
+
+  .mid-container {
+    height: 30vh;
+  }
+
+  .main-image {
+    height: 220px;
+  }
+
+  #job-title {
+    font-size: 3.5em;
+  }
+
+  #name {
+    font-size: 1.8em;
+  }
+}
+
+/* Tablets (769px – 1024px) */
+@media screen and (max-width: 1024px) {
+  .top-container {
+    height: 100vh;
+  }
+  .top-container .second {
+    align-self: end;
+  }
+
+  .mid-container,
+  .bottom-container {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .main-image {
+    height: 200px;
+  }
+
+  #job-title {
+    font-size: 3em;
+  }
+
+  #name {
+    font-size: 1.6em;
+  }
+}
+
+/* Small tablets & phones (481px – 768px) */
+@media screen and (max-width: 768px) {
+  .top-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: 100vh;
+  }
+
+  .title,
+  .top-container .second {
+    grid-column: 1;
+    align-self: end;
+  }
+
+  .mid-container,
+  .bottom-container {
+    grid-template-columns: 1fr;
+  }
+
+  .main-image {
+    height: 180px;
+    transform: scale(1);
+  }
+
+  .mid-container .first,
+  .bottom-container .first {
+    padding: 15px;
+  }
+
+  #job-title {
+    font-size: 2.5em;
+  }
+
+  #name {
+    font-size: 1.4em;
+  }
+}
+
+/* Phones (<= 480px) */
+@media screen and (max-width: 480px) {
+  .main-image {
+    height: 160px;
+    transform: scale(0.95);
+  }
+
+  .mid-container .first,
+  .bottom-container .first {
+    padding: 10px;
+  }
+
+  .bottom-container li {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
+
+  #job-title {
+    font-size: 2em;
+  }
+
+  #name {
+    font-size: 1.2em;
+  }
+}
